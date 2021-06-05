@@ -7,9 +7,6 @@
     <?php
       require_once 'parts/nav.php';
     ?>
-    <div class="breadcrumb">
-      <a ></a>
-    </div>
     <div class="goods">
       <h1 class="title index-title">Все&nbsp;товары
         <?php if ($curentCategory) { ?>
