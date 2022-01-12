@@ -12,7 +12,6 @@
     $now = 0;
     $curentCategory = $_GET['category'];
     $cat = $connect->query("SELECT * FROM categories WHERE id='$curentCategory'")->fetch(PDO::FETCH_ASSOC);    
-    $cat = $connect->query("SELECT * FROM categories WHERE id='$curentCategory'")->fetch(PDO::FETCH_ASSOC);
     $goods = $connect->query("SELECT * FROM goods WHERE category='$curentCategory'")->fetchAll(PDO::FETCH_ASSOC);
 
   } else if (isset($_GET['sort'])) {
@@ -29,6 +28,10 @@
       $goods = $connect->query("SELECT * FROM goods")->fetchAll(PDO::FETCH_ASSOC);
       $now = 0;
   }  
+
+  if($_SESSION['admin_example']) {
+    echo 'Осуществлен вход для администратора';
+  }
   
 ?>
 
@@ -63,7 +66,7 @@
           кол-во товаров: 
           <span class="cart-count">            
             <?php 
-            echo count($_SESSION['goods']);
+            echo $_SESSION['goods'] ? count($_SESSION['goods']) : '0';
             ?>
           </span>
         </span>

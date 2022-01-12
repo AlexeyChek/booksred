@@ -15,9 +15,9 @@ require 'phpmailer/Exception.php';
 
     $totalPrice = 0;
 
-    $title = "Новый заказ BOOKSRED";
+    $title = "Новый заказ ORCHID";
     $body = "
-    <h2>Новый заказ BOOKSRED</h2>
+    <h2>Новый заказ ORCHID</h2>
     <b>Имя:</b> $name<br>
     <b>Email:</b> $email<br><br>
     <b>Телефон:</b> $phone<br><br>
@@ -46,7 +46,7 @@ try {
     $mail->Password   = $password; // Пароль на почте
     $mail->SMTPSecure = 'ssl';
     $mail->Port       = 465;
-    $mail->setFrom($useremail, 'BOOKSRED'); // Адрес самой почты и имя отправителя
+    $mail->setFrom($useremail, 'ORCHID'); // Адрес самой почты и имя отправителя
 
     // Получатель письма
     $mail->addAddress($useremail);
